@@ -2010,7 +2010,7 @@ class Dot(Graph):
             stderr.close()
 
             if stderr_output:
-                stderr_output = ''.join(stderr_output)
+                stderr_output = b''.join(stderr_output)
 
         #pid, status = os.waitpid(p.pid, 0)
         status = p.wait()

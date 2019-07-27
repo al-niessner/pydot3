@@ -1,4 +1,3 @@
-# -*- coding: Latin-1 -*-
 """Graphviz's dot language parser.
 
 The dotparser parses graphviz files in dot and dot files and transforms them
@@ -14,7 +13,7 @@ Ported by: Eric Chio <ckieric@gmail.com>
 __author__ = ['Michael Krause', 'Ero Carrera', 'Eric Chio']
 __license__ = 'MIT'
 
-
+import builtins
 import sys
 import glob
 import pydot
@@ -78,7 +77,7 @@ def push_top_graph_stmt(str, loc, toks):
     for element in toks:
     
         if( isinstance(element, (ParseResults, tuple, list)) and
-            len(element) == 1 and isinstance(element[0], basestring) ):
+            len(element) == 1 and isinstance(element[0], builtins.str) ):
             
             element = element[0]
             
@@ -94,7 +93,7 @@ def push_top_graph_stmt(str, loc, toks):
             
             top_graphs.append( g )
             
-        elif isinstance( element, basestring):
+        elif isinstance( element, builtins.str):
             g.set_name( element )
             
         elif isinstance(element, pydot.Subgraph):
@@ -507,10 +506,7 @@ def parse_dot_data(data):
     global top_graphs
     
     top_graphs = list()
-
-    if data.startswith(codecs.BOM_UTF8):
-        data = data.decode( 'utf-8' )
-        
+    data = data.decode( 'utf-8' )
     try:
     
         graphparser = graph_definition()
