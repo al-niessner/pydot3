@@ -8,17 +8,17 @@ import os
 os.environ['COPY_EXTENDED_ATTRIBUTES_DISABLE'] = 'true'
 os.environ['COPYFILE_DISABLE'] = 'true'
 
-version = "1.0.8"
+version = "1.0.10"
 
 config = dict(
-    name = 'pydot3',
+    name = 'dawgie-pydot3',
     packages = ['pydot'],
     version = version,
     description = 'Python 3 interface to Graphviz\'s Dot',
     author = 'Eric Chio',
     author_email = 'ckieric@gmail.com',
-    url = 'http://www.github.com/log0/pydot3/',
-    download_url = 'https://github.com/log0/pydot3/archive/%s.zip' % version,
+    url = 'http://www.github.com/al-niessner/pydot3/',
+    download_url = 'https://github.com/al-niessner/pydot3/archive/%s.zip' % version,
     license = 'MIT',
     keywords = 'graphviz dot graphs visualization pydot',
     platforms = ['any'],
