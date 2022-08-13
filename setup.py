@@ -8,7 +8,7 @@ import os
 os.environ['COPY_EXTENDED_ATTRIBUTES_DISABLE'] = 'true'
 os.environ['COPYFILE_DISABLE'] = 'true'
 
-version = "1.0.10"
+version = "1.0.11"
 
 config = dict(
     name = 'dawgie-pydot3',
